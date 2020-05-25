@@ -6,6 +6,6 @@
     <title>Amazon(仮)</title>
 </head>
 <body>
-    
+    <header></header>
 </body>
 </html>
