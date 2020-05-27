@@ -11,15 +11,16 @@
     </header>
     <main>
     <form>
-     <label for="id">商品ID</label>
-     <input type="text" name="id" id="id">
-     <label for="image">商品の画像</label>
-     <input type="file" name="image" id="image">
      <label for="name">商品名</label>
      <input type="text" name="name" id="name">
+     <label for="image">商品の画像</label>
+     <input type="file" name="image" id="image">
      <label for="desc">商品説明</label>
      <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
-     <label for=""></label>
+     <label for="price">価格</label>
+     <input type="text" name="price" id="price">
+     <label for="count">在庫</label>
+     <input type="text" name="count" id="count">
      </form>
     </main>
     <footer>
