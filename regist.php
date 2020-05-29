@@ -11,7 +11,7 @@
     <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
     <main>
         <h1>商品を登録する</h1>
-    <form action="" method="post">
+    <form action="./add_item.php" method="post">
         <dt>
             <label for="name">商品名</label>
             <input type="text" name="name" id="name">
@@ -33,7 +33,7 @@
             <input type="number" name="count" id="count" max="1000">
         </dt>
         <dt>
-            <p class="submit-button"><input type="submit" value="登録"></p>
+            <p class="submit-button"><input type="submit" value="登録" name="submit"></p>
         </dt>
      </form>
     </main>
