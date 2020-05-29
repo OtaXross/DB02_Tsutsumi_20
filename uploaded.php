@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品確認</title>
     <link rel="stylesheet" href="CSS/edit.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header>商品確認</header>
+<header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
     <main>
+        <h1>商品確認</h1>
         <div>
             <button class="edit-menu">編集</button>
             <ul class="menu">

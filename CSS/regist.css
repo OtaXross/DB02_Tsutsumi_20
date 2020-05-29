@@ -23,12 +23,12 @@ h1 {
     white-space: nowrap;
 }
 
-#price, #count, #tel{
+#price, #count,#tel{
     width: 100px;
-    margin:0 auto 0 260px;
+    margin:0 auto 0 25%;
 }
 
 #meado {
     width: 200px;
-    margin:0 auto 0 260px;
+    margin:0 auto 0 25%;
 }

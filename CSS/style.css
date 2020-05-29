@@ -1,8 +1,15 @@
-header h1 {
+header h1 a {
     cursor: pointer;
-    color:black
+    color:black;
+    text-decoration: none;
 }
 
-header h1:visited {
-    
+header h1 a:visited {
+    color:black;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    white-space: nowrap;
 }

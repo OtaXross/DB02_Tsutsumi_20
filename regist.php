@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品登録</title>
     <link rel="stylesheet" href="css/regist.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header>
-     <h1>商品を登録する</h1>
-    </header>
+    <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
     <main>
+        <h1>商品を登録する</h1>
     <form action="" method="post">
         <dt>
             <label for="name">商品名</label>
