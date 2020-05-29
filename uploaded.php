@@ -12,7 +12,21 @@
     <main>
         <h1>商品確認</h1>
         <div>
-
+            <!-- サムネイル -->
+            <?php
+            $view="";
+            if($status==false){
+              //execute（SQL実行時にエラーがある場合）
+              $error = $stmt->errorInfo();
+              exit("ErrorQuery:".$error[2]);
+            }else{
+              //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
+              while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $view .= "<p>".$result["name"]."</p>";
+              }
+            
+            }
+            ?>
         </div>
         <div>
             <button class="edit-menu">編集</button>
