@@ -12,6 +12,9 @@
     <main>
         <h1>商品確認</h1>
         <div>
+
+        </div>
+        <div>
             <button class="edit-menu">編集</button>
             <ul class="menu">
                 <li><a href="公開設定" id="option">公開設定</a></li>
