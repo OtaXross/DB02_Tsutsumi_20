@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>アカウント設定</title>
     <link rel="stylesheet" href="css/regist.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <header>
-     <h1>アカウント設定</h1>
-    </header>
-    <main>
+    <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
+        <main>
+        <h1>アカウント設定</h1>
         <form action="" method="post">
          <dt>
              <label for="co">企業名</label>
@@ -31,5 +31,10 @@
          </dt>
         </form>
     </main>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    <script src="js/header.js"></script>
 </body>
 </html>
