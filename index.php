@@ -6,7 +6,7 @@
     <title>Amazon(仮)</title>
 </head>
 <body>
-    <header>aaaa</header>
+    <header><h1>Amazon（仮）</h1></header>
     <main>
     <!-- 大筋のリンク -->
         <a class="new" href="regist.php">商品登録</a>
