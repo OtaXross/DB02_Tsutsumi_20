@@ -14,8 +14,7 @@ try {
   $pdo = new PDO('mysql:dbname=db02_project1;charset=utf8;host=localhost','root','');
 } catch (PDOException $e) {
   exit('DbConnectError:'.$e->getMessage());
-}
-
+};
 
 //３．データ登録SQL作成 //ここにカラム名を入力する
 //xxx_table(テーブル名)はテーブル名を入力します
