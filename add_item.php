@@ -3,10 +3,14 @@
 
 //前のphpからデーターを受け取る（この受け取ったデータをもとにbindValueと結びつけるため）
 $name = $_POST["name"];
-$image = $_POST["image"];
+// $image = $_POST["image"];
 $come = $_POST["desc"];
 $cost = $_POST["price"];
 $zaiko = $_POST["count"];
+$fp = fopen($_FILES['image']['tmp_name'], "rb");
+$image = fread($fp, filesize($_FILES['image']['tmp_name']));
+fclose($fp);
+// echo $_FILES["name"];
 
 //2. DB接続します xxxにDB名を入力する
 //ここから作成したDBに接続をしてデータを登録します xxxxに作成したデータベース名を書きます
@@ -21,7 +25,7 @@ try {
 $stmt = $pdo->prepare("INSERT INTO add_item(ID, name, image, come, cost,
 zaiko, add_date)VALUES(NULL, :name, :image, :come, :cost, :zaiko, sysdate())");
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
-$stmt->bindValue(':image', $image, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
+$stmt->bindValue(':image', $image);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':come', $come, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':cost', $cost, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':zaiko', $zaiko, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
