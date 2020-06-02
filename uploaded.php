@@ -16,13 +16,6 @@
             <?php 
             include('./output.php');
             ?>
-        <div>
-            <button class="edit-menu">編集</button>
-            <ul class="menu">
-                <li><a href="公開設定" id="option">公開設定</a></li>
-                <li><a href="削除">削除</a></li>
-            </ul>
-        </div>
     </main>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
