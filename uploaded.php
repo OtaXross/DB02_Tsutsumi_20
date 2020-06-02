@@ -16,8 +16,6 @@
             <?php 
             include('./output.php');
             ?>
-          <?php        
-             ?>
         <div>
             <button class="edit-menu">編集</button>
             <ul class="menu">
