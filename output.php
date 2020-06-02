@@ -1,4 +1,13 @@
-<?php
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品確認</title>
+</head>
+<body>
+        <div>
+            <?php
             //1.  DB接続します xxxにDB名を入れます
             try {
                 // mampの場合は注意です！違います！別途後ほど確認します！
@@ -8,7 +17,7 @@
                 };
     //２．データ登録SQL作成
     //作ったテーブル名を書く場所  xxxにテーブル名を入れます
-    $stmt = $pdo->prepare("SELECT * FROM add_item");
+    $stmt = $pdo->prepare("SELECT * FROM add_item WHERE id");
     $status = $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -21,18 +30,15 @@
             }else{
               //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
               while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $image .= "<p>".$result["image"]."</p>";
+                $image = $result["image"];
+                $image = base64_encode($image);
                 $view .= "<p>".$result["name"]."</p>";
+                echo '<p><img src="data:image/png;base64,'.$image.'"></p>';
+                echo $view;    
               };
-            //   echo $view;    
-            //   $DB_PIC = $row['image'];
-              $finfo    = finfo_open(FILEINFO_MIME_TYPE);
-              $mimeType = finfo_buffer($finfo, $DB_PIC);
-              finfo_close($finfo);
-              header('Content-Type: ' . $mimeType);
-              echo $DB_PIC;
             };
-
-            header('Content-type: image/png');
-            // include './output.php';
+            
             ?>
+        </div>
+</body>
+</html>
