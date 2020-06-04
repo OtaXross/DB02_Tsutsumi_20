@@ -32,3 +32,11 @@ h1 {
     width: 200px;
     margin:0 auto 0 25%;
 }
+
+li{
+    list-style-type: none;
+}
+
+footer{
+    text-align: center;
+}

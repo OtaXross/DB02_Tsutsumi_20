@@ -26,11 +26,11 @@
         </dt>
         <dt>
             <label for="price">価格</label>
-            <input type="number" name="price" id="price" max="1000000">
+            <input type="number" name="price" id="price" max="1000000" min="100">
         </dt>
         <dt>
             <label for="count">在庫</label>
-            <input type="number" name="count" id="count" max="1000">
+            <input type="number" name="count" id="count" max="1000" min="1">
         </dt>
         <dt>
             <p class="submit-button"><input type="submit" value="登録" name="submit"></p>
@@ -38,6 +38,7 @@
      </form>
     </main>
     <footer>
+        <p><input type="button" value="戻る" name="back" onclick="location.href='./index.php'"></p>
     </footer>
 </body>
 </html>
