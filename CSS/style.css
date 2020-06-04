@@ -13,3 +13,8 @@ h1 {
     text-align: center;
     white-space: nowrap;
 }
+
+.link main {
+    text-align: center;
+    font-size: 50px;
+}

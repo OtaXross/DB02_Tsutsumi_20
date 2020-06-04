@@ -10,9 +10,11 @@
     <header><h1>Amazon（仮）</h1></header>
     <main>
     <!-- 大筋のリンク -->
-        <a class="new" href="regist.php">商品登録</a>
-        <a class="confirm" href="uploaded.php">商品確認</a>
-        <a class="accounts" href="accounts.php">アカウント</a>
+    <div class="link">
+        <p><a class="new" href="regist.php">商品登録</a></p>
+        <p><a class="confirm" href="uploaded.php">商品確認</a></p>
+        <p><a class="accounts" href="accounts.php">アカウント</a></p>
+    </div>
     </main>
 </body>
 </html>
