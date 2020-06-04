@@ -63,8 +63,8 @@ if($status==false){
   crossorigin="anonymous"></script>
     <script>
       setTimeout(function(){
-        window.location.href = './regist.php'
-      }, 3000);
+        window.location.href = './regist.php';
+      }, 1500);
       </script>
 </body>
 </html>

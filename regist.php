@@ -38,7 +38,8 @@
      </form>
     </main>
     <footer>
-        <p><input type="button" value="戻る" name="back" onclick="location.href='./index.php'"></p>
+        <input type="button" value="商品確認" name="confirm" onclick="location.href='./uploaded.php'">
+        <input type="button" value="戻る" name="back" onclick="location.href='./index.php'">
     </footer>
 </body>
 </html>
