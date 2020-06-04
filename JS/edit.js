@@ -7,8 +7,6 @@ $(function(){
 
 $(function(){
     $(document).on("click", function(e){
-        e_class = $(e.target).attr("class");
-        menuButton_class = $(".edit-menu").attr("class");
         if(!$(e.target).is(".menu,.edit-menu") && $(".edit-menu").next("ul").css("visibility", "hidden")){
             $(".edit-menu").next("ul").slideToggle(100);
             $(".edit-menu").next("ul").hide()
