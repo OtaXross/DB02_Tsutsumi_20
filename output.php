@@ -6,7 +6,7 @@
     <title>商品確認</title>
 </head>
 <body>
-        <div>
+        <div class="items">
             <?php
             //1.  DB接続します xxxにDB名を入れます
             try {
@@ -32,12 +32,16 @@
               while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
                 $image = $result["image"];
                 $image = base64_encode($image);
-                $view .= "<p>".$result["name"]."</p>";
-                echo '<p><img src="data:image/png;base64,'.$image.'"></p>';
-                echo $view;    
+                $view = "<p class='desc'>".$result["name"]."</p>";
+                echo '<div class="item"><p class="thumb"><img src="data:image/png;base64,'.$image.'"></p>'.$view.'<div class="edit-button">
+                <button class="edit-menu">編集</button>
+                <ul class="menu">
+                    <li><a href="公開設定" id="option">公開設定</a></li>
+                    <li><a href="削除">削除</a></li>
+                </ul>
+            </div>'."</div>";
               };
-            };
-            
+            };        
             ?>
         </div>
 </body>

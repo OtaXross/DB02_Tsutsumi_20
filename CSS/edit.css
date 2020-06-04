@@ -34,10 +34,7 @@
 }
 
 .items {
-    display: flex;
-    flex-wrap: nowrap;
-    word-break: normal;
-    float: left;
+    display: inline-block;
 }
 
 .item {
@@ -60,8 +57,7 @@
 .thumb img {
     width: 100%;
     height: auto;
-    /* image-rendering: pixelated; */
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 
 .desc {
