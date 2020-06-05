@@ -47,15 +47,15 @@
                 // 編集ボタン
                 echo
                   '<div class="item">
-                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>
-                    <p class="cost">￥'.$price.'</p>'
-                    .$view
-                    .$comment.
+                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>'
+                    .$view.
+                    '<p class="cost">￥'.$price.'</p>'
+                    .
                       '<div class="edit-button">
                         <button class="edit-menu">編集</button>
                           <ul class="menu">
                             <li><a href="公開設定" id="option">公開設定</a></li>
-                            <li><a href="削除">削除</a></li>
+                            <li><a href="削除" class="" id="">削除</a></li>
                           </ul>
                       </div>
                   </div>';
