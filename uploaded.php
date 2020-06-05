@@ -24,7 +24,6 @@
     //作ったテーブル名を書く場所  xxxにテーブル名を入れます
     $stmt = $pdo->prepare("SELECT * FROM add_item WHERE id");
     $status = $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
             $view="";
             $image="";
