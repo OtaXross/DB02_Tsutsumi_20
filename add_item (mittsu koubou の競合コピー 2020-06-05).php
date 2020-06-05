@@ -25,10 +25,10 @@ try {
 $stmt = $pdo->prepare("INSERT INTO add_item(ID, name, image, come, cost,
 zaiko, add_date)VALUES(NULL, :name, :image, :come, :cost, :zaiko, sysdate())");
 $stmt->bindValue(':name', $name, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
-$stmt->bindValue(':image', $image);  //Integer（数値の場合 PDO::PARAM_INT)
-$stmt->bindValue(':come', $come, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)
-$stmt->bindValue(':cost', $cost, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
-$stmt->bindValue(':zaiko', $zaiko, PDO::PARAM_INT);  //Integer（数値の場合 PDO::PARAM_INT)
+$stmt->bindValue(':image', $image);
+$stmt->bindValue(':come', $come, PDO::PARAM_STR);
+$stmt->bindValue(':cost', $cost, PDO::PARAM_INT);
+$stmt->bindValue(':zaiko', $zaiko, PDO::PARAM_INT);
 $status = $stmt->execute();
 
 //４．データ登録処理後
@@ -41,6 +41,7 @@ if($status==false){
   //５．index.phpへリダイレクト 書くときにLocation: in この:　のあとは半角スペースがいるので注意！！
 //   header("Location: select.php");
   // exit;
+
 }
 ?>
 <!DOCTYPE html>
@@ -48,16 +49,15 @@ if($status==false){
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>アップロード完了</title>
 </head>
 <body>
   <?php
      if($html == true){
-       echo '<strong>商品のアップロードが完了しました。</strong>';
+       echo '<strong>商品のアップロードが完了しました。<br>数秒後に登録画面に踊ります</strong>';
      };
-    //  exit;
     ?>
-    <script
+        <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>

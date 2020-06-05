@@ -26,33 +26,33 @@
     $status = $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $view="";
-    $image="";
-    if($status==false){
-        //execute（SQL実行時にエラーがある場合）
-        $error = $stmt->errorInfo();
-        exit("ErrorQuery:".$error[2]);
-    }else{
-        //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
-        while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $image = $result["image"];
-        $image = base64_encode($image);
-        $view = "<p class='desc'>".$result["name"]."</p>";
-        echo '<div class="item"><p class="thumb"><img src="data:image/png;base64,'.$image.'"></p>'.$view.'<div class="edit-button">
-        <button class="edit-menu">編集</button>
-        <ul class="menu">
-            <li><a href="公開設定" id="option">公開設定</a></li>
-            <li><a href="削除">削除</a></li>
-        </ul>
-    </div>'."</div>";
-        };
-    };        
- ?>
+            $view="";
+            $image="";
+            if($status==false){
+              //execute（SQL実行時にエラーがある場合）
+              $error = $stmt->errorInfo();
+              exit("ErrorQuery:".$error[2]);
+            }else{
+              //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
+              while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $image = $result["image"];
+                $image = base64_encode($image);
+                $view = "<p class='desc'>".$result["name"]."</p>";
+                echo '<div class="item"><p class="thumb"><img src="data:image/png;base64,'.$image.'"></p>'.$view.'<div class="edit-button">
+                <button class="edit-menu">編集</button>
+                <ul class="menu">
+                    <li><a href="公開設定" id="option">公開設定</a></li>
+                    <li><a href="削除">削除</a></li>
+                </ul>
+            </div>'."</div>";
+              };
+            };        
+            ?>
     </main>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"
   integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
   crossorigin="anonymous"></script>
-  <script src="JS/edit.js"></script>
+  <script src="js/edit.js"></script>
 </body>
 </html>
