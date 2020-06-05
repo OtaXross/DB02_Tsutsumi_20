@@ -26,7 +26,7 @@
     $status = $stmt->execute();
 
             $view="";
-            $image="";
+            $gazou="";
             if($status==false){
               //execute（SQL実行時にエラーがある場合）
               $error = $stmt->errorInfo();
@@ -34,16 +34,21 @@
             }else{
               //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
               while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-                $image = $result["image"];
-                $image = base64_encode($image);
+                $gazou = $result["image"];
+                $gazou2 = base64_encode($gazou);
                 $view = "<p class='desc'>".$result["name"]."</p>";
-                echo '<div class="item"><p class="thumb"><img src="data:image/png;base64,'.$image.'"></p>'.$view.'<div class="edit-button">
-                <button class="edit-menu">編集</button>
-                <ul class="menu">
-                    <li><a href="公開設定" id="option">公開設定</a></li>
-                    <li><a href="削除">削除</a></li>
-                </ul>
-            </div>'."</div>";
+                echo
+                  '<div class="item">
+                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>'
+                      .$view.
+                      '<div class="edit-button">
+                        <button class="edit-menu">編集</button>
+                          <ul class="menu">
+                            <li><a href="公開設定" id="option">公開設定</a></li>
+                            <li><a href="削除">削除</a></li>
+                          </ul>
+                      </div>
+                  </div>';
               };
             };        
             ?>
