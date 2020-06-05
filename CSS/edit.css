@@ -29,9 +29,9 @@
 
 .edit-button{
     position: relative;
-    bottom:40px;
+    bottom: 120px;
     left:155px;
-    width: 21%;
+    width: 22%;
 }
 
 .items {
@@ -62,8 +62,22 @@
     /* object-fit: cover; */
 }
 
+.name {
+    padding-left:10px;
+    padding-top:5px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
 .desc {
+    padding-left:10px;
+    padding-top:5px;
+    margin-top: 8px;
+}
+
+.cost {
     border-top: 1px solid #000;
     padding-left:10px;
     padding-top:5px;
+    font-weight: bold;
 }

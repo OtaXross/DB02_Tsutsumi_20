@@ -34,13 +34,23 @@
             }else{
               //Selectデータの数だけ自動でループしてくれる $resultの中に「カラム名」が入ってくるのでそれを表示させる例
               while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
+                // DBから画像ファイル(bin)を取り出す
                 $gazou = $result["image"];
+                // 文字化けしてるやつを変換する
                 $gazou2 = base64_encode($gazou);
+                $price = $result["cost"];
                 $view = "<p class='desc'>".$result["name"]."</p>";
+                $comment = $result["come"];
+                // 商品項目を出力
+                // サムネ
+                // 名前
+                // 編集ボタン
                 echo
                   '<div class="item">
-                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>'
-                      .$view.
+                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>
+                    <p class="cost">￥'.$price.'</p>'
+                    .$view
+                    .$comment.
                       '<div class="edit-button">
                         <button class="edit-menu">編集</button>
                           <ul class="menu">
