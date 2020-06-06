@@ -11,6 +11,7 @@
     <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
     <main>
         <h1>商品を登録する</h1>
+        <?php include("./back.php>");?>
     <form action="./add_item.php" method="post" enctype="multipart/form-data">
         <dt>
             <label for="name">商品名</label>

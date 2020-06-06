@@ -11,6 +11,7 @@
     <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
         <main>
         <h1>アカウント設定</h1>
+        <?php include("./back.php>");?>
         <form action="" method="post">
          <dt>
              <label for="co">企業名</label>

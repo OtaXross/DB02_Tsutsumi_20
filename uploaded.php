@@ -6,11 +6,13 @@
     <title>商品確認</title>
     <link rel="stylesheet" href="CSS/edit.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
 <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
     <main>
         <h1>商品確認</h1>
+        <?php include("./back.php>");?>
         <div class="items">
             <?php
             //1.  DB接続します xxxにDB名を入れます
@@ -42,31 +44,50 @@
                 $view = "<p class='desc'>".$result["name"]."</p>";
                 $comment = $result["come"];
                 // 商品項目を出力
-                // サムネ
-                // 名前
-                // 編集ボタン
+                // 1.サムネ
+                // 2.名前
+                // 3.お値段
+                // 4.編集ボタン
+                // 5.<script>タグは削除用スクリプト(WIP -> 多分いけてる)
+                // 連結をなくした。${var}はテキストの中に変数の中身をぶち込むおまじない（変数展開）。
                 echo
-                  '<div class="item">
-                    <p class="thumb"><img src="data:image/png;base64,'.$gazou2.'"></p>'
-                    .$view.
-                    '<p class="cost">￥'.$price.'</p>'
-                    .
-                      '<div class="edit-button">
-                        <button class="edit-menu">編集</button>
-                          <ul class="menu">
-                            <li><a href="公開設定" id="option">公開設定</a></li>
-                            <li><a href="削除" class="" id="">削除</a></li>
+                  "<div class='item'>
+                    <p class='thumb'><img src='data:image/png;base64,${gazou2}'></p>
+                    ${view}
+                    <p class='cost'>￥${price}</p>
+                    <div class='edit-button'>
+                        <button class='edit-menu'>編集</button>
+                          <ul class='menu'>
+                            <li><a href='公開設定' id='option'>公開設定</a></li>
+                            <li><a href='削除' class='delete-button' id='id'>削除</a></li>
                           </ul>
                       </div>
-                  </div>';
+                  </div>
+                  <script>
+                    $(function(){
+                      $('.delete-button#id').first().attr('id', ${id});
+                    });
+                </script>";
               };
             };        
             ?>
-    </main>
-<script
-  src="https://code.jquery.com/jquery-3.5.1.js"
-  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-  crossorigin="anonymous"></script>
-  <script src="js/edit.js"></script>
+            </div>
+          <!-- ここから削除用ポップアップのメッセージ -->
+          <div class="delete-message1" style="display: none;"><p>この商品データを削除しますか？</p></div>
+          <div class="delete-message2" style="display: none;"><p>一度削除したデータは復元できません。<br>それでも削除しますか？</p></div>
+          <div class="delete-message3" style="display: none;"><p>こうかいしませんね？</p></div>
+          <div class="delete-message4" style="display: none;"><p>削除しました。</p></div>
+          <!-- ここまで削除用ポップアップのメッセージ -->
+      </main>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <script src="js/edit.js"></script>
+    <script src="js/delete.js"></script>
 </body>
 </html>
