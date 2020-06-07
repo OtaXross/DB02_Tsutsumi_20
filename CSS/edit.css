@@ -59,8 +59,6 @@
 .thumb img {
     width: 100%;
     height: auto;
-    /* image-rendering: pixelated; */
-    /* object-fit: cover; */
 }
 
 .name {

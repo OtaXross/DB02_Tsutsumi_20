@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品確認</title>
-    <link rel="stylesheet" href="CSS/edit.css">
+    <link rel="stylesheet" href="CSS/dlsite.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/reset.css">
+    <!-- これはポップアップのCSS宣言。ネットのテンプレートを使用 -->
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
 <header><h1><a href="./index.php">Amazon（仮）</a></h1></header>
@@ -14,18 +16,17 @@
         <h1>商品確認</h1>
         <?php include("./back.php>");?>
         <div class="items">
-            <?php
-            //1.  DB接続します xxxにDB名を入れます
-            try {
-                // mampの場合は注意です！違います！別途後ほど確認します！
-                $pdo = new PDO('mysql:dbname=db02_project1;charset=utf8;host=localhost','root','');
-                } catch (PDOException $e) {
-                exit('データベースに接続できませんでした。'.$e->getMessage());
-                };
-    //２．データ登録SQL作成
-    //作ったテーブル名を書く場所  xxxにテーブル名を入れます
-    $stmt = $pdo->prepare("SELECT * FROM add_item WHERE id");
-    $status = $stmt->execute();
+          <?php
+          //1.  DB接続
+          try {
+              $pdo = new PDO('mysql:dbname=db02_project1;charset=utf8;host=localhost','root','');
+              } catch (PDOException $e) {
+               exit('データベースに接続できませんでした。'.$e->getMessage());
+              };
+            //２．データ登録SQL作成
+            //作ったテーブル名を書く場所  xxxにテーブル名を入れます
+            $stmt = $pdo->prepare("SELECT * FROM add_item WHERE id");
+            $status = $stmt->execute();
 
             $view="";
             $gazou="";
@@ -41,28 +42,32 @@
                 // 文字化けしてるやつを変換する
                 $gazou2 = base64_encode($gazou);
                 $price = $result["cost"];
-                $view = "<p class='desc'>".$result["name"]."</p>";
+                $view = "<p class='name'>".$result["name"]."</p>";
                 $comment = $result["come"];
                 $id = $result["ID"];
                 // 商品項目を出力
                 // 1.サムネ
                 // 2.名前
                 // 3.お値段
-                // 4.編集ボタン
+                // 4.編集ボタン（アコーディオンメニュー）
                 // 5.<script>タグは削除用スクリプト(WIP -> 多分いけてる)
                 // 連結をなくした。${var}はテキストの中に変数の中身をぶち込むおまじない（変数展開）。
+                // href=javascript:void(0)でジャンプしないように。
                 echo
                   "<div class='item'>
                     <p class='thumb'><img src='data:image/png;base64,${gazou2}'></p>
-                    ${view}
-                    <p class='cost'>￥${price}</p>
-                    <div class='edit-button'>
-                        <button class='edit-menu'>編集</button>
-                          <ul class='menu'>
-                            <li><a href='公開設定' id='option'>公開設定</a></li>
-                            <li><a href='javascript:void(0)' class='delete-button' id='id'>削除</a></li>
-                          </ul>
-                      </div>
+                    <div class='details'>
+                      ${view}
+                      <p class='cost'>${price}円</p>
+                      <p class='desc'>${comment}</p>
+                      <div class='edit-button'>
+                          <button class='edit-menu'>編集</button>
+                            <ul class='menu'>
+                              <li><a href='javascript:void(0)' id='option'>公開設定</a></li>
+                              <li><a href='javascript:void(0)' class='delete-button' id='id'>削除</a></li>
+                            </ul>
+                        </div>
+                    </div>
                   </div>
                   <script>
                     $(function(){

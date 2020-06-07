@@ -7,6 +7,7 @@
         };
     //　delete.jsから渡されたidを取得。 
     $target_id =$_GET["id"];
+    // データ削除SQL
     $stmt = $pdo->prepare("DELETE FROM add_item WHERE ID = ${target_id}");
     $status = $stmt->execute();
     // 商品確認ページに戻る。戻ってきたことを識別するためにパラメータ付与
