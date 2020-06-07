@@ -43,6 +43,7 @@
                 $price = $result["cost"];
                 $view = "<p class='desc'>".$result["name"]."</p>";
                 $comment = $result["come"];
+                $id = $result["ID"];
                 // 商品項目を出力
                 // 1.サムネ
                 // 2.名前
@@ -59,7 +60,7 @@
                         <button class='edit-menu'>編集</button>
                           <ul class='menu'>
                             <li><a href='公開設定' id='option'>公開設定</a></li>
-                            <li><a href='削除' class='delete-button' id='id'>削除</a></li>
+                            <li><a href='javascript:void(0)' class='delete-button' id='id'>削除</a></li>
                           </ul>
                       </div>
                   </div>

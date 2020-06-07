@@ -12,13 +12,16 @@ $(function(){
                 "はい": function(){
                     $(this).dialog("close")
                     $(".delete-message2").dialog({
+                        // はいを押すと2つ目のウィンドウが表示
                         modal: true,
                         title: "hontoni?",
                         draggable: true,
                         buttons: {
+                            // ボタン名：クリックアクション
                             "はい": function(){
                                 $(this).dialog("close"),
                                 $(".delete-message3").dialog({
+                                    // はいを押すと3つ目のウィンドウが表示。
                                     modal: true,
                                     title: "最終警告",
                                     draggable: true,
@@ -47,6 +50,7 @@ $(function(){
                 }
             }
         });
+        // ここに専用クラス（決まってる）を追加することで、閉じるボタンの違和感を解消
         $(".ui-dialog-titlebar-close").addClass("ui-button-icon ui-icon ui-icon-closethick")
     });
     return false;
@@ -62,7 +66,9 @@ $(function(){
             title: "完了",
             buttons: {
                 "OK": function(){
-                    $(this).dialog("close")
+                    $(this).dialog("close");
+                    // 商品確認画面に戻る。パラメータはなし。
+                    location.href="./uploaded.php"
                 }
             },
         });
