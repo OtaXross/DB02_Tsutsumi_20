@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品確認</title>
-    <link rel="stylesheet" href="CSS/dlsite.css">
-    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/dlsite.css">
     <!-- これはポップアップのCSS宣言。ネットのテンプレートを使用 -->
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/flick/jquery-ui.css" rel="stylesheet" />
 </head>
@@ -56,10 +55,10 @@
                 echo
                   "<div class='item'>
                     <p class='thumb'><img src='data:image/png;base64,${gazou2}'></p>
-                    <div class='details'>
-                      ${view}
-                      <p class='cost'>${price}円</p>
-                      <p class='desc'>${comment}</p>
+                    <dl class='details'>
+                      <dt class='title'>${view}</dt>
+                      <dd class='cost'>${price}円</dd>
+                      <dd class='desc'>${comment}</dd>
                       <div class='edit-button'>
                           <button class='edit-menu'>編集</button>
                             <ul class='menu'>
@@ -67,7 +66,7 @@
                               <li><a href='javascript:void(0)' class='delete-button' id='id'>削除</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </dl>
                   </div>
                   <script>
                     $(function(){

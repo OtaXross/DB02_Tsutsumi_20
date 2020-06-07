@@ -26,6 +26,8 @@ h1 {
 .back-button p {
     margin: 0px;
     padding-top: 2px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .back-button {

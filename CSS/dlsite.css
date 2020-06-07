@@ -23,12 +23,28 @@ div{
     margin: 0 0 30px;
 }
 
-.item{
-    position: relative;
-    width: 50%;
-    padding: 12px 10px;
-    border-bottom: solid 1px #ddd;
-    box-sizing: border-box;
+/* ウィンドウサイズ860px以下でこちらを適用 */
+@media screen and (max-width:860px){
+    .item {
+        width: 100%;
+        position: relative;
+        padding: 12px 10px;
+        border-bottom: solid 1px #ddd;
+        box-sizing: border-box;
+        min-width: 420px;
+    }
+}
+
+/* ウィンドウサイズ860px以上でこちらを適用 */
+@media screen and (min-width:860px){
+    .item{
+        width: 50%;
+        position: relative;
+        padding: 12px 10px;
+        border-bottom: solid 1px #ddd;
+        box-sizing: border-box;
+        min-width: 420px;
+    }
 }
 
 .thumb{
@@ -44,4 +60,114 @@ img{
 .details{
     display: block;
     margin: 0 0 0 210px;
+}
+
+.menu {
+    display: none;
+    visibility: hidden;
+    list-style-type: none;
+    border: 1px solid black;
+    width: 100px;
+    margin-left: 20px;
+    padding-left: 0px;
+    /* position: relative;
+    right: 20px;
+    bottom: 10px; */
+    background: darkgrey;
+}
+
+.menu li {
+    padding-left:20px;
+}
+
+.menu li a{
+    color: white;
+}
+
+.edit-menu {
+    cursor: pointer;
+}
+
+.edit-button{
+    position: relative;
+    bottom: 54px;
+    left:155px;
+    width: 22%;
+    min-width: 42.78px;
+}
+
+.title{
+    margin-right: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    color: #039;
+    text-decoration: none;
+}
+
+.cost{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-bottom: 2px;
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    font-size: 15px;
+    color: #c00;
+    margin: 0 4px 4px 0;
+}
+
+.desc{
+    line-height: 1.3;
+    padding-bottom: 6px;
+    font-size: 12px;
+}
+
+header h1 a {
+    cursor: pointer;
+    color:black;
+    text-decoration: none;
+}
+
+header h1 a:visited {
+    color:black;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.link {
+    text-align: center;
+    font-size: 50px;
+}
+
+.back-button:hover {
+    background-color: lightgrey;
+}
+
+.back-button p {
+    margin: 0px;
+    padding-top: 2px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.back-button {
+    float: left;
+    width: 120px;
+    margin-right: 100px;
+    margin-left: 20px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+    height: 30px;
+    position: absolute;
+    top: 20px;
 }
