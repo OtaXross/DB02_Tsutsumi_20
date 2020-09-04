@@ -7,6 +7,7 @@ $name = $_POST["name"];
 $come = $_POST["desc"];
 $cost = $_POST["price"];
 $zaiko = $_POST["count"];
+// rb = バイナリファイルの読み込み
 $fp = fopen($_FILES['image']['tmp_name'], "rb");
 $image = fread($fp, filesize($_FILES['image']['tmp_name']));
 fclose($fp);

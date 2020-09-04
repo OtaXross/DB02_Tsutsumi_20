@@ -50,21 +50,19 @@
                 // 3.お値段
                 // 4.編集ボタン（アコーディオンメニュー）
                 // 5.<script>タグは削除用スクリプト(WIP -> 多分いけてる)
-                // 連結をなくした。""の中に変数を入れるとそのテキストの中に変数の中身をぶち込める（変数展開）。''で囲ってる場合は不可。
-                // {}は変数の名前に文字列が続いてる場合に使うらしい。
+                // 連結をなくした。${var}はテキストの中に変数の中身をぶち込むおまじない（変数展開）。
                 // href=javascript:void(0)でジャンプしないように。
-                // 削除ボタンのidを$idに。これにより、不要なjsを削除。
                 echo
                   "<div class='item'>
                     <p class='thumb'><img src='data:image/png;base64,$gazou2'></p>
                     <dl class='details'>
                       <dt class='title'>$view</dt>
-                      <dd class='cost'>${price}円</dd> 
+                      <dd class='cost'>${price}円</dd>
                       <dd class='desc'>$comment</dd>
                       <div class='edit-button'>
                           <button class='edit-menu'>編集</button>
                             <ul class='menu'>
-                              <li><a href='javascript:void(0)' id='option'>非公開にする</a></li>
+                              <li><a href='javascript:void(0)' id='option'>公開設定</a></li>
                               <li><a href='javascript:void(0)' class='delete-button' id=$id>削除</a></li>
                             </ul>
                         </div>

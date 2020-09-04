@@ -8,6 +8,7 @@ $(function(){
             modal: true, //他の場所クリックできない
             title: "確認",
             draggable: true, //動かせる
+            closeText:"", //右上の閉じるボタンのテキスト。デフォで背景に「×」が入ってるので空欄
             buttons: {
                 "はい": function(){
                     $(this).dialog("close")
@@ -16,6 +17,7 @@ $(function(){
                         modal: true,
                         title: "hontoni?",
                         draggable: true,
+                        closeText:"",
                         buttons: {
                             // ボタン名：クリックアクション
                             "はい": function(){
@@ -25,6 +27,7 @@ $(function(){
                                     modal: true,
                                     title: "最終警告",
                                     draggable: true,
+                                    closeText:"",
                                     buttons: {
                                         "はい": function(){
                                             $(this).dialog("close"),
@@ -36,22 +39,18 @@ $(function(){
                                         }
                                     }
                                 })
-                                $(".ui-dialog-titlebar-close").addClass("ui-button-icon ui-icon ui-icon-closethick")
                             },
                             "いいえ": function(){
                                 $(this).dialog("close")
                             }
                         }
                     })
-                    $(".ui-dialog-titlebar-close").addClass("ui-button-icon ui-icon ui-icon-closethick")
                 },
                 "いいえ": function(){
                     $(this).dialog("close")
                 }
             }
         });
-        // ここに専用クラス（決まってる）を追加することで、閉じるボタンの違和感を解消
-        $(".ui-dialog-titlebar-close").addClass("ui-button-icon ui-icon ui-icon-closethick")
     });
     return false;
 });

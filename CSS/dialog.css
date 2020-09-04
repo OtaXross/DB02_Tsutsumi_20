@@ -1,0 +1,14 @@
+.ui-dialog {
+    border: 1px solid #000;
+}
+
+.ui-dialog-titlebar {
+    background-color: blue;
+    color: white;
+}
+
+.ui-dialog-titlebar-close {
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+}
